@@ -8,7 +8,7 @@ const Page = () => {
     setYouUrl(youdata);
   }, []);
   return (
-    <div className=" relative font-Line flex flex-col justify-center items-center p-5 w-screen h-screen overflow-hidden">
+    <div className=" relative font-Line flex flex-col justify-center items-center w-screen h-screen overflow-hidden">
       <iframe
         width="0"
         height="0"
@@ -19,12 +19,14 @@ const Page = () => {
         referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen
       ></iframe>
-      <div className="relative flex justify-center items-center w-[500px] h-[300px] overflow-hidden bg-[#ffffff] rounded-2xl rotate-x-12">
-        <div className=" absolute w-[500px] h-[500px] bg-[#bda9c3] rounded-2xl rotate-45 right-[420px]"></div>
-        <div className=" absolute w-[500px] h-[500px] bg-[#cbb6d1] rounded-2xl rotate-45 left-[420px]"></div>
-        <div className=" absolute w-[600px] h-[600px] bg-[#c4bbc6] rounded-2xl rotate-45  bottom-[-500px]"></div>
+      <div className=" animate-opacity absolute flex justify-center items-center w-[500px] h-[300px] overflow-hidden bg-[#ffffff] rounded-2xl max-[600px]:scale-[0.55] min-[1000px]:scale-[1.2] duration-500 ease-in-out">
+        <div className="z-[10] absolute w-[500px] h-[500px] bg-[#bda9c3] rounded-2xl rotate-45 right-[420px]"></div>
+        <div className="z-[10] absolute w-[500px] h-[500px] bg-[#cbb6d1] rounded-2xl rotate-45 left-[420px]"></div>
+        <div className="z-[11] absolute w-[600px] h-[600px] bg-[#c4bbc6] rounded-2xl rotate-45  bottom-[-500px]"></div>
       </div>
-      {/* <BoxImage /> */}
+      <div className="z-[12] min-[100px]:scale-[1.2]">
+        <BoxImage />
+      </div>
     </div>
   );
 };
