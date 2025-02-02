@@ -5,6 +5,7 @@ const Form = () => {
   const { form, setForm } = useTheme();
   const [inputimage, setInputImage] = useState([]);
   const [name, setName] = useState("");
+  const [youUrl, setYouUrl] = useState("");
 
   const [form2, setForm2] = useState("");
   const [form3, setForm3] = useState("hidden");
@@ -22,7 +23,14 @@ const Form = () => {
   const onSubmitImage1 = () => {
     localStorage.setItem("output", JSON.stringify(inputimage));
     localStorage.setItem("name", name);
+    localStorage.setItem("youtubeUrl",youUrl);
   };
+
+  const convertYouTubeLink = (e) => {
+    const url = e.target.value;
+    const videoId = url.split("youtu.be/")[1].split("?")[0];
+    setYouUrl(videoId);
+  }
 
   return (
     <form
@@ -107,9 +115,9 @@ const Form = () => {
         ></input>
         <input
           type="text"
-          onChange={onChangeImage1}
+          onChange={convertYouTubeLink}
           className=" rounded-2xl w-[70%] p-2  outline-none"
-          placeholder="Link from Google Drive"
+          placeholder="Link from Youtube"
         ></input>
         <button type="submit" className=" rounded-lg bg-slate-500 p-1 mt-4">
           Submit

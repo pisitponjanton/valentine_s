@@ -8,10 +8,17 @@ const Page = () => {
   useEffect(() => {
     const namedata = localStorage.getItem("name");
     setName(namedata);
+
+    const timer = setTimeout(() => {
+        window.location.href = "/next";
+      }, 7300);
+  
+      return () => clearTimeout(timer);
+
   }, []);
   return (
-    <div className="relative flex flex-col justify-center items-center w-screen h-screen font-Line overflow-hidden">
-      <div className=" absolute">
+    <div className="relative flex flex-col justify-center items-center font-Line overflow-hidden w-screen h-screen">
+      <div className="absolute">
         <div className=" translate-x-[400px] max-[1080px]:hidden">
           <Flower />
         </div>
