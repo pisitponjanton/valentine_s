@@ -1,3 +1,5 @@
+import { transform } from 'next/dist/build/swc/generated-native';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -21,8 +23,8 @@ export default {
         flower2: "flower 2s 3.5s ease-in-out forwards",
         flower3: "flower 2s 4s ease-in-out forwards",
         flower4: "flower 2s 4.5s ease-in-out forwards",
-        skew: "skew ease-in-out forwards",
-        opacity: "opacitys 1.5s ease-in-out",
+        skew: "skew 1s ease-in-out forwards",
+        opacity: "opacitys 0.7s ease-in-out",
       },
       keyframes: {
         stalk: {
@@ -38,7 +40,7 @@ export default {
           "100%":   {transform: "skew(6deg)",display: "none"},
         },
         opacitys:{
-          "0%":{opacity: "0",transform: "rotate(90deg)"},
+          "0%":{opacity: "0"},
           "100%":{opacity: "1"},
         },
       },
