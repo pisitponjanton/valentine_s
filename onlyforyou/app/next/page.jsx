@@ -12,7 +12,7 @@ const Page = () => {
       <iframe
         width="0"
         height="0"
-        src={`https://www.youtube.com/embed/${youUrl}?autoplay=1&mute=0&controls=0&loop=1&playlist=${youUrl}`}
+        src={`https://www.youtube.com/embed/${youUrl}?autoplay=1&mute=1&controls=0&loop=1&playlist=${youUrl}&playsinline=1&modestbranding=1`}
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
