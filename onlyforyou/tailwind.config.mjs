@@ -25,6 +25,7 @@ export default {
         flower4: "flower 2s 4.5s ease-in-out forwards",
         skew: "skew 1s ease-in-out forwards",
         opacity: "opacitys 0.7s ease-in-out",
+        up:"up 3s ease-in-out infinite",
       },
       keyframes: {
         stalk: {
@@ -42,6 +43,10 @@ export default {
         opacitys:{
           "0%":{opacity: "0"},
           "100%":{opacity: "1"},
+        },
+        up:{
+          "0%":{transform:"translateY(0px)"},
+          "100%":{transform:"translateY(-1000px)"},
         },
       },
     },
