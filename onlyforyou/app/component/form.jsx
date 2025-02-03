@@ -28,8 +28,10 @@ const Form = () => {
 
   const convertYouTubeLink = (e) => {
     const url = e.target.value;
-    const videoId = url.split("youtu.be/")[1].split("?")[0];
-    setYouUrl(videoId);
+    if (url.includes("youtu.be/")){
+      const videoId = url.split("youtu.be/")[1].split("?")[0];
+      setYouUrl(videoId);
+    }
   }
 
   return (
