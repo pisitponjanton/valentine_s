@@ -43,7 +43,7 @@ const Form = () => {
         onClick={() => setForm("hidden")}
         className=" absolute cursor-pointer right-5 top-2"
       >
-        ปิด
+        Close
       </div>
       <div
         className={`flex flex-col justify-center gap-4 items-center p-2 rounded-2xl w-[100%] ${form2}`}

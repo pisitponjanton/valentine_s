@@ -16,6 +16,9 @@ export default {
       fontFamily: {
         Line: ['Line', 'sans-serif'],
       },
+      backgroundImage:{
+        hearts:"url('/image/hearts.png')",
+      },
       animation: {
         stalk: "stalk 3s ease-in-out",
         flower: "flower 2s 1.2s ease-in-out forwards",
@@ -23,7 +26,7 @@ export default {
         flower2: "flower 1.7s 5.5s ease-in-out forwards",
         skew: "skew 1s ease-in-out forwards",
         opacity: "opacitys 0.7s ease-in-out",
-        up:"up 3s ease-in-out infinite",
+        up:"up 1.2s ease-in-out infinite alternate",
       },
       keyframes: {
         stalk: {
@@ -43,8 +46,8 @@ export default {
           "100%":{opacity: "1"},
         },
         up:{
-          "0%":{transform:"translateY(0px)"},
-          "100%":{transform:"translateY(-1000px)"},
+          "0%":{transform:"scale(1)"},
+          "100%":{transform:"scale(1.2)"},
         },
       },
     },

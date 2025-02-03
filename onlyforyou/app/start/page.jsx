@@ -16,7 +16,7 @@ const Page = () => {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="relative flex flex-col justify-center items-center font-Line overflow-hidden w-screen h-screen">
+    <div className="relative flex flex-col justify-center items-center font-Line overflow-hidden w-screen h-screen cursor-none">
       <iframe
         width="0"
         height="0"
