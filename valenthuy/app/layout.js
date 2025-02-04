@@ -11,7 +11,7 @@ export const metadata = {
   authors: [
     {
       name: "Pisitpon Jantop",
-      url: "https://vercel.com/pisitponjantons-projects/valentine-s",
+      url: "https://valentine-s-five.vercel.app",
     },
   ],
   openGraph: {
@@ -19,11 +19,11 @@ export const metadata = {
       "Valenthuy - เขียนข้อความโรแมนติกสำหรับของขวัญของคุณ | Write Romantic Gift Messages",
     description:
       "เขียนข้อความที่เต็มไปด้วยความหมายสำหรับของขวัญวาเลนไทน์ของคุณ เพื่อแสดงความรักอย่างอบอุ่นและน่าประทับใจ | Craft meaningful, heartfelt messages for your Valentine’s gifts.",
-    url: "https://vercel.com/pisitponjantons-projects/valentine-s",
+    url: "https://valentine-s-five.vercel.app",
     siteName: "Valenthuy",
     images: [
       {
-        url: "https://vercel.com/pisitponjantons-projects/valentine-s/og-image.jpg",
+        url: "https://valentine-s-five.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Valenthuy - เขียนข้อความของขวัญสุดประทับใจ | Write Gift Messages",
@@ -39,7 +39,7 @@ export const metadata = {
     description:
       "แสดงความรักด้วยข้อความวาเลนไทน์สุดซึ้ง ที่จะทำให้คนพิเศษของคุณประทับใจไม่รู้ลืม | Express your love with heartfelt Valentine’s messages.",
     images: [
-      "https://vercel.com/pisitponjantons-projects/valentine-s/twitter-image.jpg",
+      "https://valentine-s-five.vercel.app/twitter-image.jpg",
     ],
   },
 };
