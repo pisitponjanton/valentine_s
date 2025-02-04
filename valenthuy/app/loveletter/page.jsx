@@ -10,7 +10,6 @@ const Page = () => {
     page2: "",
     page3: "opacity-0 z-[-11] translate-y-[100px]",
     buttonback:"opacity-0",
-    bg:"",
   });
 
   useEffect(() => {
@@ -26,11 +25,10 @@ const Page = () => {
       page3: "opacity-1 z-[20]",
       isPlaying: true,
       buttonback:"opacity-1",
-      bg:"bg-[#a11d57]",
     });
   };
   return (
-    <div className={`${data.bg} duration-700 ease-in-out relative font-Line flex flex-col justify-center items-center w-screen h-screen overflow-hidden`}>
+    <div className={`duration-700 ease-in-out relative font-Line flex flex-col justify-center items-center w-screen h-screen overflow-hidden`}>
       {data.isPlaying && (
         <iframe
           width="0"
