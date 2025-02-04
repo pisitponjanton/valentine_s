@@ -37,11 +37,11 @@ const Form = () => {
   return (
     <form
       onSubmit={onSubmitImage1}
-      className={`font-Line absolute flex flex-col justify-center gap-4 items-center bg-slate-400 w-[300px] h-[400px] p-2 ${form} rounded-2xl`}
+      className={`z-[20] font-Line absolute flex flex-col justify-center gap-4 items-center bg-slate-400 w-[300px] h-[420px] max-[320px]:scale-[0.85] p-2 pt-[30px] ${form} rounded-2xl`}
     >
       <div
         onClick={() => setForm("hidden")}
-        className=" absolute cursor-pointer right-5 top-2"
+        className=" absolute cursor-pointer right-5 top-5"
       >
         Close
       </div>

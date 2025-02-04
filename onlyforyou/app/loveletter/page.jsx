@@ -55,8 +55,6 @@ const Page = () => {
           <div className=" absolute w-[600px] h-[600px] rotate-45 bg-[#fbc9d5] border-[10px] left-[-8px] top-[200px] rounded-2xl"></div>
         </div>
       </div>
-      {/* <div className="w-[100px] h-[100px] bg-black rounded-full animate-up z-[10] absolute"></div>
-      <div className="w-[100px] h-[100px] bg-black rounded-full animate-up z-[10] absolute left-[500px]"></div> */}
       <div
         className={`${page3} duration-[1s] ease-in-out max-[600px]:scale-[1] min-[600px]:scale-[1.5]`}
       >
