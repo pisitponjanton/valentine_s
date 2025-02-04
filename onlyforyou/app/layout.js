@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`bg-[#FF5D80] overflow-hidden`}
+        className={`bg-[#FF5D80]`}
       >
         <ThemeProvider>{children}</ThemeProvider>
       </body>
