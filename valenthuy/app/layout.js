@@ -2,47 +2,34 @@ import { ThemeProvider } from "./component/ThemeContext";
 import "./globals.css";
 
 export const metadata = {
-  title:
-    "Valenthuy - เขียนข้อความของขวัญสุดประทับใจให้คนที่คุณรัก | Write Heartfelt Gift Messages",
-  description:
-    "สร้างข้อความของขวัญสุดโรแมนติก เพื่อแสดงความรักในทุกโอกาสพิเศษ เติมเต็มความอบอุ่นด้วยคำพูดที่มาจากใจ ผ่าน Valenthuy. | Create personalized and romantic gift messages to express your love. Make every word count with Valenthuy.",
-  keywords:
-    "วาเลนไทน์, ข้อความรัก, ข้อความของขวัญ, ของขวัญสุดพิเศษ, เขียนข้อความ, ความรัก, Valentine, love messages, gift notes, romantic words, heartfelt messages",
-  authors: [
-    {
-      name: "Pisitpon Jantop",
-      url: "https://valentine-s-five.vercel.app",
-    },
-  ],
+  title: "Valenthuy - เขียนข้อความของขวัญสุดประทับใจ",
+  description: "สร้างข้อความของขวัญโรแมนติกเพื่อแสดงความรักให้คนพิเศษของคุณ ด้วย Valenthuy.",
+  keywords: "วาเลนไทน์, ข้อความรัก, ข้อความของขวัญ, ความรัก, Valentine, love messages",
+  authors: [{ name: "Pisitpon Jantop", url: "https://valentine-s-five.vercel.app" }],
   openGraph: {
-    title:
-      "Valenthuy - เขียนข้อความโรแมนติกสำหรับของขวัญของคุณ | Write Romantic Gift Messages",
-    description:
-      "เขียนข้อความที่เต็มไปด้วยความหมายสำหรับของขวัญวาเลนไทน์ของคุณ เพื่อแสดงความรักอย่างอบอุ่นและน่าประทับใจ | Craft meaningful, heartfelt messages for your Valentine’s gifts.",
+    title: "Valenthuy - ข้อความของขวัญจากใจ",
+    description: "เขียนข้อความสุดพิเศษสำหรับของขวัญวาเลนไทน์ของคุณ",
     url: "https://valentine-s-five.vercel.app",
     siteName: "Valenthuy",
     images: [
       {
-        url: "https://valentine-s-five.vercel.app/og-image.jpg",
+        url: "https://valentine-s-five.vercel.app/image/hearts.png",
         width: 1200,
         height: 630,
-        alt: "Valenthuy - เขียนข้อความของขวัญสุดประทับใจ | Write Gift Messages",
+        alt: "Valenthuy - Gift Message for Your Loved One",
       },
     ],
-    locale: "th_TH", // สำหรับภาษาไทย
+    locale: "th_TH",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Valenthuy - เขียนข้อความของขวัญจากใจ | Craft the Perfect Gift Message",
-    description:
-      "แสดงความรักด้วยข้อความวาเลนไทน์สุดซึ้ง ที่จะทำให้คนพิเศษของคุณประทับใจไม่รู้ลืม | Express your love with heartfelt Valentine’s messages.",
-    images: [
-      "https://valentine-s-five.vercel.app/twitter-image.jpg",
-    ],
+    title: "Valenthuy - เขียนข้อความสุดโรแมนติก",
+    description: "แสดงความรักผ่านข้อความวาเลนไทน์ที่แสนอบอุ่น",
+    images: ["https://valentine-s-five.vercel.app/image/hearts.png"],
   },
 };
+
 
 export default function RootLayout({ children }) {
   return (
