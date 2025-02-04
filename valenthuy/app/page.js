@@ -37,7 +37,7 @@ export default function Home() {
         Setting
       </button>
       <div className={` ${data.text} text-[16px] font-Line absolute bottom-3  hover:text-[#ffff] duration-300 ease-linear cursor-default `}>
-        Created by
+        Created by{" "}
         <Link
           href={"https://github.com/pisitponjanton"}
           className="hover:text-[#d45151]"
@@ -45,7 +45,7 @@ export default function Home() {
         >
           {"Lone's"}
         </Link>
-        IT KMITL
+        {" "}IT KMITL
       </div>
     </div>
   );

@@ -4,11 +4,12 @@ import { useTheme } from "../component/ThemeContext";
 const Form = () => {
   const { form, setForm } = useTheme();
   const [inputimage, setInputImage] = useState([]);
-  const [name, setName] = useState("");
-  const [youUrl, setYouUrl] = useState("");
-
-  const [form2, setForm2] = useState("");
-  const [form3, setForm3] = useState("hidden");
+  const [data, setData] = useState({
+    name: "",
+    youUrl: "",
+    form2: "",
+    form3: "hidden",
+  });
 
   const onChangeImage1 = (e) => {
     const url = e.target.value;
@@ -17,36 +18,42 @@ const Form = () => {
   };
 
   const onChangeName = (e) => {
-    setName(e.target.value);
+    setData({
+      ...data,
+      name: e.target.value,
+    });
   };
 
   const onSubmitImage1 = () => {
     localStorage.setItem("output", JSON.stringify(inputimage));
-    localStorage.setItem("name", name);
-    localStorage.setItem("youtubeUrl",youUrl);
+    localStorage.setItem("name", data.name);
+    localStorage.setItem("youtubeUrl", data.youUrl);
   };
 
   const convertYouTubeLink = (e) => {
     const url = e.target.value;
-    if (url.includes("youtu.be/")){
+    if (url.includes("youtu.be/")) {
       const videoId = url.split("youtu.be/")[1].split("?")[0];
-      setYouUrl(videoId);
+      setData({
+        ...data,
+        youUrl: videoId,
+      });
     }
-  }
+  };
 
   return (
     <form
       onSubmit={onSubmitImage1}
-      className={`z-[20] font-Line absolute flex flex-col justify-center gap-4 items-center bg-slate-400 w-[300px] h-[420px] max-[320px]:scale-[0.85] p-2 pt-[30px] ${form} rounded-2xl`}
+      className={`z-[20] font-Line absolute flex flex-col justify-center gap-4 items-center bg-[#255d6e] w-[300px] h-[420px] max-[320px]:scale-[0.85] p-2 pt-[30px] ${form} rounded-2xl`}
     >
       <div
         onClick={() => setForm("hidden")}
-        className=" absolute cursor-pointer right-5 top-5"
+        className=" absolute cursor-pointer right-5 top-5 text-[#ffff]"
       >
         Close
       </div>
       <div
-        className={`flex flex-col justify-center gap-4 items-center p-2 rounded-2xl w-[100%] ${form2}`}
+        className={`flex flex-col justify-center gap-4 items-center p-2 rounded-2xl w-[100%] ${data.form2}`}
       >
         <input
           type="text"
@@ -80,16 +87,15 @@ const Form = () => {
         ></input>
         <div
           onClick={() => {
-            setForm2("hidden");
-            setForm3("");
+            setData({ ...data, form2: "hidden", form3: "" });
           }}
-          className="rounded-lg bg-slate-500 p-1 mt-4 cursor-pointer"
+          className="rounded-lg bg-[#ff6262] p-1 mt-4 cursor-pointer"
         >
           Next
         </div>
       </div>
       <div
-        className={`flex flex-col justify-center gap-4 items-center p-2 rounded-2xl w-[100%] ${form3}`}
+        className={`flex flex-col justify-center gap-4 items-center p-2 rounded-2xl w-[100%] ${data.form3}`}
       >
         <input
           type="text"
