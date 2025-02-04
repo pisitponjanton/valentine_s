@@ -9,6 +9,7 @@ const Form = () => {
     youUrl: "",
     form2: "",
     form3: "hidden",
+    feelings:"",
   });
 
   const onChangeImage1 = (e) => {
@@ -27,6 +28,7 @@ const Form = () => {
   const onSubmitImage1 = () => {
     localStorage.setItem("output", JSON.stringify(inputimage));
     localStorage.setItem("name", data.name);
+    localStorage.setItem("feelings", data.feelings);
     localStorage.setItem("youtubeUrl", data.youUrl);
   };
 
@@ -40,6 +42,13 @@ const Form = () => {
       });
     }
   };
+
+  const onChangeFeelings = (e)=>{
+    setData({
+      ...data,
+      feelings: e.target.value,
+    })
+  }
 
   return (
     <form
@@ -117,9 +126,9 @@ const Form = () => {
         ></input>
         <input
           type="text"
-          onChange={onChangeImage1}
+          onChange={onChangeFeelings}
           className=" rounded-2xl w-[70%] p-2  outline-none"
-          placeholder="Link from Google Drive"
+          placeholder="Write your feelings"
         ></input>
         <input
           type="text"
@@ -127,7 +136,7 @@ const Form = () => {
           className=" rounded-2xl w-[70%] p-2  outline-none"
           placeholder="Link from Youtube"
         ></input>
-        <button type="submit" className=" rounded-lg bg-slate-500 p-1 mt-4">
+        <button type="submit" className=" rounded-lg bg-[#ff6262] p-1 mt-4">
           Submit
         </button>
       </div>
