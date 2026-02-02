@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { fromBase64 } from "@/lib/base64";
 import { getGDriveViewUrl } from "@/lib/img";
 
-export default function Page() {
+function ViewClient() {
   const searchParams = useSearchParams();
   const encoded = searchParams.get("d");
 
@@ -128,5 +129,19 @@ export default function Page() {
         </a>
       </footer>
     </div>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center">
+          Loading your letter… 💌
+        </div>
+      }
+    >
+      <ViewClient />
+    </Suspense>
   );
 }
