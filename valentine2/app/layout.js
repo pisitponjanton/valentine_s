@@ -1,18 +1,17 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Valentine Letter 💌 | Create & Share a Love Message",
+  title: "Letter | Create & Share a Personal Message",
   description:
-    "Create a beautiful Valentine letter with photos and a heartfelt message. Generate a shareable link and send it to someone special. Made with love by BuildifyX.",
+    "Create a simple letter with photos and a personal message. Generate a shareable link and send it to someone important. Built by BuildifyX.",
 
   keywords: [
-    "Valentine",
-    "Valentine letter",
-    "love letter",
-    "Valentine website",
-    "send love message",
-    "Valentine link",
-    "romantic message",
+    "letter",
+    "personal letter",
+    "photo letter",
+    "share message",
+    "message link",
+    "digital letter",
     "BuildifyX",
   ],
 
@@ -20,17 +19,17 @@ export const metadata = {
   creator: "BuildifyX",
 
   openGraph: {
-    title: "Valentine Letter 💖",
+    title: "Letter",
     description:
-      "A sweet Valentine letter with photos and a personal message. Create your own and share it with someone special 💌",
+      "A personal letter with photos and a message. Create your own and share it through a simple link.",
     url: "https://valentine.buildifyx.com",
-    siteName: "Valentine Letter by BuildifyX",
+    siteName: "Letter by BuildifyX",
     images: [
       {
         url: "img/icon.png",
         width: 512,
         height: 512,
-        alt: "Valentine Letter",
+        alt: "Letter",
       },
     ],
     locale: "en_US",
@@ -39,9 +38,9 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Valentine Letter 💌",
+    title: "Letter",
     description:
-      "Create a Valentine letter with photos and a personal message. Share it with someone you love 💖",
+      "Create a personal letter with photos and a message, then share it with a link.",
     images: ["img/icon.png"],
     creator: "@buildifyx",
   },
