@@ -10,7 +10,7 @@ export function initViewer(modelList) {
   scene.background = new THREE.Color(0x111111);
 
   const camera = new THREE.PerspectiveCamera(
-    45,
+    40,
     window.innerWidth / window.innerHeight,
     0.1,
     1000,

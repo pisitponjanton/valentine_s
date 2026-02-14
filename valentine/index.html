@@ -8,14 +8,14 @@
 
     <!-- ✅ สำคัญมากสำหรับมือถือ -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
             overflow: hidden;
-            background: #111;
-            font-family: Arial, sans-serif;
-            touch-action: manipulation;
+            font-family: 'Playfair Display', serif;
+            background: radial-gradient(circle at center, #1a001f 0%, #000000 70%);
         }
 
         #loading {
@@ -33,25 +33,30 @@
 
         #nextBtn {
             position: absolute;
-            bottom: calc(20px + env(safe-area-inset-bottom));
+            bottom: calc(30px + env(safe-area-inset-bottom));
             left: 50%;
             transform: translateX(-50%);
-            padding: 14px 32px;
-            font-size: clamp(14px, 4vw, 18px);
-            background: rgba(255, 255, 255, 0.1);
+            padding: 16px 45px;
+            font-size: 16px;
             color: white;
+            background: linear-gradient(135deg, rgba(255, 0, 120, 0.4), rgba(255, 0, 200, 0.2));
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 40px;
+            backdrop-filter: blur(12px);
             cursor: pointer;
-            backdrop-filter: blur(10px);
             transition: 0.3s;
+            box-shadow:
+                0 0 15px rgba(255, 0, 150, 0.5);
             z-index: 10;
-            min-width: 140px;
-            text-align: center;
+        }
+
+        #nextBtn:hover {
+            transform: translateX(-50%) scale(1.05);
+            box-shadow:
+                0 0 25px rgba(255, 0, 180, 0.8);
         }
 
         #nextBtn:active {
-            background: rgba(255, 255, 255, 0.3);
             transform: translateX(-50%) scale(0.95);
         }
 
@@ -59,6 +64,41 @@
         @media (max-width: 768px) {
             #nextBtn {
                 padding: 16px 40px;
+            }
+        }
+
+        #message {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: clamp(28px, 7vw, 48px);
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: #fff;
+            z-index: 10;
+            width: 90%;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        #message span {
+            display: block;
+            font-size: clamp(14px, 4vw, 20px);
+            letter-spacing: 2px;
+            margin-top: 10px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, 0);
             }
         }
     </style>
@@ -76,6 +116,10 @@
 <body>
 
     <div id="loading">Loading 3D Model...</div>
+    <div id="message">
+        For Aom
+        <span>Hope this makes your day a little brighter.</span>
+    </div>
     <a id="nextBtn">Next</a>
 
     <script type="module">
@@ -85,7 +129,7 @@
             "model/potted_carnation_red.glb",
             "model/bouquet__rose_red.glb",
             "model/rose.glb",
-            "model/happy_valentines.glb",
+            "model/happy_valentines.glb"
         ]);
     </script>
 
