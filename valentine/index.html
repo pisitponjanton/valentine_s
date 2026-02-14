@@ -6,12 +6,16 @@
     <title>For Aom</title>
     <link rel="icon" href="data:,">
 
+    <!-- ✅ สำคัญมากสำหรับมือถือ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <style>
         body {
             margin: 0;
             overflow: hidden;
             background: #111;
             font-family: Arial, sans-serif;
+            touch-action: manipulation;
         }
 
         #loading {
@@ -20,41 +24,53 @@
             left: 50%;
             transform: translate(-50%, -50%);
             color: white;
-            font-size: 18px;
+            font-size: clamp(16px, 4vw, 22px);
             letter-spacing: 1px;
             z-index: 10;
+            text-align: center;
+            width: 80%;
         }
 
         #nextBtn {
             position: absolute;
-            bottom: 30px;
+            bottom: calc(20px + env(safe-area-inset-bottom));
             left: 50%;
             transform: translateX(-50%);
-            padding: 12px 28px;
+            padding: 14px 32px;
+            font-size: clamp(14px, 4vw, 18px);
             background: rgba(255, 255, 255, 0.1);
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 30px;
+            border-radius: 40px;
             cursor: pointer;
             backdrop-filter: blur(10px);
             transition: 0.3s;
             z-index: 10;
+            min-width: 140px;
+            text-align: center;
         }
 
-        #nextBtn:hover {
-            background: rgba(255, 255, 255, 0.2);
+        #nextBtn:active {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-50%) scale(0.95);
+        }
+
+        /* มือถือแนวตั้ง */
+        @media (max-width: 768px) {
+            #nextBtn {
+                padding: 16px 40px;
+            }
         }
     </style>
 
-    <!-- ✅ สำคัญมาก -->
     <script type="importmap">
-  {
-    "imports": {
-      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
     }
-  }
-  </script>
+    </script>
 </head>
 
 <body>
@@ -68,7 +84,6 @@
         initViewer([
             "model/potted_carnation_red.glb",
             "model/bouquet__rose_red.glb",
-            "model/love_heart_tree_for_valentines_day.glb",
             "model/rose.glb",
             "model/happy_valentines.glb",
         ]);

@@ -16,9 +16,15 @@ export function initViewer(modelList) {
     1000,
   );
 
-  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  const renderer = new THREE.WebGLRenderer({
+    antialias: true,
+    powerPreference: "high-performance",
+  });
+
+  // ✅ จำกัด pixel ratio กันมือถือร้อน
+  const maxPixelRatio = 1.5;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, maxPixelRatio));
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(window.devicePixelRatio);
   document.body.appendChild(renderer.domElement);
 
   // Lights
@@ -34,7 +40,13 @@ export function initViewer(modelList) {
   controls.enableDamping = true;
   controls.dampingFactor = 0.05;
   controls.autoRotate = true;
-  controls.autoRotateSpeed = 1.0;
+  controls.autoRotateSpeed = 0.8;
+
+  // ✅ ปรับให้เหมาะกับมือถือ
+  controls.enablePan = false;
+  controls.enableZoom = true;
+  controls.zoomSpeed = 0.6;
+  controls.rotateSpeed = 0.8;
 
   renderer.domElement.addEventListener("pointerdown", () => {
     controls.autoRotate = false;
@@ -51,6 +63,16 @@ export function initViewer(modelList) {
 
     if (currentModel) {
       scene.remove(currentModel);
+      currentModel.traverse((obj) => {
+        if (obj.geometry) obj.geometry.dispose();
+        if (obj.material) {
+          if (Array.isArray(obj.material)) {
+            obj.material.forEach((m) => m.dispose());
+          } else {
+            obj.material.dispose();
+          }
+        }
+      });
     }
 
     loader.load(
@@ -97,11 +119,20 @@ export function initViewer(modelList) {
     });
   }
 
-  window.addEventListener("resize", () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
+  // ✅ รองรับ resize + หมุนจอ
+  function handleResize() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    camera.aspect = width / height;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  });
+
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, maxPixelRatio));
+  }
+
+  window.addEventListener("resize", handleResize);
+  window.addEventListener("orientationchange", handleResize);
 
   function animate() {
     requestAnimationFrame(animate);
