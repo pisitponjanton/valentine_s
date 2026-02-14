@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>For Aom</title>
+    <link rel="icon" href="data:,">
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #111;
+            font-family: Arial, sans-serif;
+        }
+
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 18px;
+            letter-spacing: 1px;
+            z-index: 10;
+        }
+
+        #nextBtn {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 28px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+            z-index: 10;
+        }
+
+        #nextBtn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+
+    <!-- ✅ สำคัญมาก -->
+    <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+    <div id="loading">Loading 3D Model...</div>
+    <a id="nextBtn">Next</a>
+
+    <script type="module">
+        import { initViewer } from "./index.js";
+
+        initViewer([
+            "model/potted_carnation_red.glb",
+            "model/bouquet__rose_red.glb",
+            "model/love_heart_tree_for_valentines_day.glb",
+            "model/rose.glb",
+            "model/happy_valentines.glb",
+        ]);
+    </script>
+
+</body>
+
+</html>
